@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import "./App.css";
+
 import StudentForm from "./components/StudentForm";
 import StudentList from "./components/StudentList";
 import {
@@ -37,7 +39,7 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "30px", fontFamily: "Arial" }}>
+    <div className="container">
       <h2>Student Management</h2>
 
       <StudentForm
