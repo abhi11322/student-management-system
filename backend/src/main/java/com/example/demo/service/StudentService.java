@@ -31,4 +31,15 @@ public class StudentService {
     public void deleteStudent(Long id) {
         repository.deleteById(id);
     }
+    public Student updateStudent(Long id, Student updatedStudent) {
+    Student existing = repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Student not found"));
+
+    existing.setName(updatedStudent.getName());
+    existing.setEmail(updatedStudent.getEmail());
+    existing.setCourse(updatedStudent.getCourse());
+    existing.setYear(updatedStudent.getYear());
+
+    return repository.save(existing);
+}
 }
